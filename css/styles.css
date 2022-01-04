@@ -1,0 +1,166 @@
+body {
+  margin: 0 auto;
+  background: #fff;
+}
+
+.main,
+.title,
+.status {
+  margin: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.game {
+  border: outset;
+  background-color: #f2f2eb;
+  padding: 1rem;
+}
+
+.title {
+  color: #ff3d00;
+  margin-bottom: 10rem;
+}
+
+.status {
+  color: #ff3d00;
+  margin-bottom: 1rem;
+}
+
+.container {
+  padding: 2rem;
+  margin: 1rem;
+}
+
+.display-container.display-size-12 {
+  margin-bottom: 24px;
+}
+
+.display-container {
+  position: relative;
+  margin-right: 24px;
+  float: left;
+}
+
+.display-container div.segment-x,
+.display-container div.segment-y {
+  position: absolute;
+}
+
+.display-container span.segment-border {
+  display: block;
+  position: absolute;
+}
+
+.display-container.display-size-12 {
+  width: 100px;
+  height: 250px;
+}
+
+.display-container.display-size-12 .segment-x {
+  width: 72px;
+  left: 13px;
+  border-bottom: 12px solid #000;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-x .segment-border {
+  top: 12px;
+  left: -12px;
+  right: -12px;
+  border-top: 12px solid #000;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-y {
+  height: 72px;
+  width: 0;
+  border-right: 12px solid #000;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-y .segment-border {
+  position: relative;
+  left: 12px;
+  height: 72px;
+  margin-top: -12px;
+  border-left: 12px solid #000;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-a {
+  top: 0;
+}
+
+.display-container.display-size-12 .segment-b {
+  top: 13px;
+  left: 98px;
+}
+
+.display-container.display-size-12 .segment-c {
+  top: 111px;
+  left: 98px;
+}
+
+.display-container.display-size-12 .segment-d {
+  top: 196px;
+}
+
+.display-container.display-size-12 .segment-e {
+  top: 111px;
+  left: 0px;
+}
+
+.display-container.display-size-12 .segment-f {
+  top: 13px;
+  left: 0px;
+}
+
+.display-container.display-size-12 .segment-g {
+  top: 98px;
+}
+
+.display-no-1 .segment-a,
+.display-no-1 .segment-d,
+.display-no-1 .segment-e,
+.display-no-1 .segment-f,
+.display-no-1 .segment-g {
+  /*display: none;*/
+  opacity: 0.1;
+  filter: alpha(opacity=10);
+}
+
+.display-no-2 .segment-c,
+.display-no-2 .segment-f {
+  /*display: none;*/
+  opacity: 0.1;
+}
+
+.display-no-0 .segment-g {
+  /*display: none;*/
+  opacity: 0.1;
+}
+
+.form {
+  margin: 1.5rem;
+}
+
+.input {
+  border-radius: 5px;
+  border-color: #ff3d00;
+  width: 20rem;
+  height: 2rem;
+}
+
+.button {
+  background-color: #ff3d00;
+  border-radius: 5px;
+  color: white;
+  width: 5rem;
+  height: 2.5rem;
+}
