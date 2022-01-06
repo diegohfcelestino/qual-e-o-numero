@@ -30,18 +30,17 @@ html {
 
 .container {
   min-width: 22rem;
-  min-height: 20rem;
+  min-height: 16rem;
   display: grid;
   grid-template-columns: 95px 95px 95px;
+  justify-content: center;
 }
 
 .display-container {
   position: relative;
   float: left;
-  flex: 2;
   text-align: center;
   font-size: 1.5em;
-  margin: 0 20px;
 }
 
 .display-container div.segment-x,
@@ -54,7 +53,7 @@ html {
   position: absolute;
 }
 
-/* Tamanho da area dos displays dos displays */
+/* Tamanho da area dos displays */
 .display-container.display-size-12 {
   width: 50px;
   height: 200px;
@@ -184,6 +183,10 @@ html {
   opacity: 0.05;
 }
 
+.display-none {
+  opacity: 0;
+}
+
 .form {
   margin: 1.5rem;
 }
@@ -191,16 +194,59 @@ html {
 .input {
   border-radius: 5px;
   border-color: #ff3d00;
-  width: 15rem;
+  width: 14rem;
   height: 2rem;
+}
+
+.input.disable {
+  background-color: #888584;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .button {
   background-color: #ff3d00;
+  border: none;
   border-radius: 5px;
   color: white;
   width: 5rem;
   height: 2.5rem;
+  cursor: pointer;
+}
+
+.btn-restart {
+  background-color: #9e9c9c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.span-nova-partida {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgRestart {
+  height: 20px;
+  width: 20px;
+  margin-right: 4px;
+}
+
+.button.disable {
+  background-color: #888584;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.restart {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
 }
 
 /*Responsive -----------------*/

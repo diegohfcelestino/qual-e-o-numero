@@ -1,54 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qual é o numero</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <main class="main">
-    <section class="card">
-      <h1 class="title">Qual é o numero?</h1>
-      <h3 class="tip" id="tip"></h3>
-      <div class="container">
-
-        <div id="display-0" class="display-container display-size-12 display-no-0">
-          <div class="segment-x segment-a"><span class="segment-border"></span></div>
-          <div class="segment-y segment-b"><span class="segment-border"></span></div>
-          <div class="segment-y segment-c"><span class="segment-border"></span></div>
-          <div class="segment-x segment-d"><span class="segment-border"></span></div>
-          <div class="segment-y segment-e"><span class="segment-border"></span></div>
-          <div class="segment-y segment-f"><span class="segment-border"></span></div>
-          <div class="segment-x segment-g"><span class="segment-border"></span></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <title>Qual é o numero</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="main">
+      <section class="card">
+        <h1 class="title">Qual é o numero?</h1>
+        <h3 class="tip" id="tip">&nbsp</h3>
+        <div class="container">
+          <div
+            id="display-0"
+            class="display-container display-size-12 display-none"
+          >
+            <div class="segment-x segment-a">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-b">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-c">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-x segment-d">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-e">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-f">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-x segment-g">
+              <span class="segment-border"></span>
+            </div>
+          </div>
+          <div
+            id="display-1"
+            class="display-container display-size-12 display-no-0"
+          >
+            <div class="segment-x segment-a">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-b">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-c">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-x segment-d">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-e">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-f">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-x segment-g">
+              <span class="segment-border"></span>
+            </div>
+          </div>
+          <div
+            id="display-2"
+            class="display-container display-size-12 display-none"
+          >
+            <div class="segment-x segment-a">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-b">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-c">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-x segment-d">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-e">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-y segment-f">
+              <span class="segment-border"></span>
+            </div>
+            <div class="segment-x segment-g">
+              <span class="segment-border"></span>
+            </div>
+          </div>
         </div>
-        <div id="display-1" class="display-container display-size-12 display-no-1">
-          <div class="segment-x segment-a"><span class="segment-border"></span></div>
-          <div class="segment-y segment-b"><span class="segment-border"></span></div>
-          <div class="segment-y segment-c"><span class="segment-border"></span></div>
-          <div class="segment-x segment-d"><span class="segment-border"></span></div>
-          <div class="segment-y segment-e"><span class="segment-border"></span></div>
-          <div class="segment-y segment-f"><span class="segment-border"></span></div>
-          <div class="segment-x segment-g"><span class="segment-border"></span></div>
-        </div>
-        <div id="display-2" class="display-container display-size-12 display-no-2">
-          <div class="segment-x segment-a"><span class="segment-border"></span></div>
-          <div class="segment-y segment-b"><span class="segment-border"></span></div>
-          <div class="segment-y segment-c"><span class="segment-border"></span></div>
-          <div class="segment-x segment-d"><span class="segment-border"></span></div>
-          <div class="segment-y segment-e"><span class="segment-border"></span></div>
-          <div class="segment-y segment-f"><span class="segment-border"></span></div>
-          <div class="segment-x segment-g"><span class="segment-border"></span></div>
-        </div>
-      </div>
-      <form class="form" id="form">
-        <div class="restart" id="restart"></div>
-        <input class="input" type="number" name="check" id="check"/>
-        <button class="button" id="btnCheck">Enviar</button>
-      </form>
-    </section>
-  </main>
-  <script src="js/script.js"></script>
-</body>
+        <form class="form" id="form">
+          <div class="restart" id="restart"></div>
+          <input
+            class="input"
+            type="number"
+            name="check"
+            id="check"
+            placeholder="Digite o Palpite"
+          />
+          <button class="button" id="btnCheck">Enviar</button>
+        </form>
+      </section>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
 </html>
