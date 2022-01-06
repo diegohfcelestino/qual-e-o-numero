@@ -3,74 +3,45 @@ body {
   background: #fff;
 }
 
+/*100% de px = 16px*/
+html {
+  font-size: 93.75%; /*15px */
+  margin-top: 1rem;
+}
+
 .main,
 .title,
 .tip {
-  margin: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .card {
-  border-width: 10px;
+  border-width: 5px;
   border-style: solid;
   border-color: #ccccc9;
   background-color: #f2f2eb;
-  max-width: 50vh;
 }
 
 .title {
   color: #ff3d00;
-  margin-bottom: rem;
+  margin: 3rem;
 }
 
-.tip {
-  color: #ff3d00;
-  margin-bottom: 1rem;
-}
-
-.container-form {
-  flex: 1;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.restart {
-  border: none;
-  border-radius: 5px;
-  width: 14rem;
-  height: 3rem;
-  display: inline-block;
-  margin: 1rem 9rem 3rem 9rem;
-  cursor: pointer;
-  background-color: grey;
-  color: white;
-}
-
-.input {
-  border-radius: 5px;
-  border-color: #ff3d00;
-  background: white;
-  font-size: 1.5rem;
-}
-
-.check {
-  background-color: #ff3d00;
-  border-radius: 5px;
-  color: white;
-  text-align: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.container-display {
-  padding: 2rem;
+.container {
+  min-width: 22rem;
+  min-height: 20rem;
+  display: grid;
+  grid-template-columns: 95px 95px 95px;
 }
 
 .display-container {
   position: relative;
-  margin-right: 28px;
   float: left;
+  flex: 2;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0 20px;
 }
 
 .display-container div.segment-x,
@@ -83,95 +54,204 @@ body {
   position: absolute;
 }
 
+/* Tamanho da area dos displays dos displays */
 .display-container.display-size-12 {
-  width: 100px;
-  height: 250px;
+  width: 50px;
+  height: 200px;
 }
 
+/* Tamanho e inicio do display deitados (eixo x) */
 .display-container.display-size-12 .segment-x {
-  width: 72px;
-  left: 13px;
-  border-bottom: 10px solid #000;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+  width: 40px;
+  left: 12px;
+  border-bottom: 12px solid #000;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
 }
 
+/* Espaçamento e bordas do eixo x */
 .display-container.display-size-12 .segment-x .segment-border {
-  top: 10px;
-  left: -10px;
-  right: -10px;
-  border-top: 10px solid #000;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
+  top: 12px;
+  left: -12px;
+  right: -12px;
+  border-top: 12px solid #000;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
 }
 
+/* Tamanho do display em pé (eixo y) */
 .display-container.display-size-12 .segment-y {
-  height: 72px;
-  width: 0;
-  border-right: 10px solid #000;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  height: 60px;
+  border-right: 12px solid #000;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
 }
 
+/* Espaçamento e bordas do eixo y */
 .display-container.display-size-12 .segment-y .segment-border {
-  position: relative;
-  left: 10px;
-  height: 72px;
-  margin-top: -10px;
-  border-left: 10px solid #000;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  left: 12px;
+  height: 60px;
+  margin-top: -12px;
+  border-left: 12px solid #000;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
 }
 
+/* Abaixo são os posicionamento dos displays */
 .display-container.display-size-12 .segment-a {
   top: 0;
 }
-
 .display-container.display-size-12 .segment-b {
-  top: 13px;
-  left: 98px;
+  top: 14px;
+  left: 64px;
 }
-
 .display-container.display-size-12 .segment-c {
-  top: 111px;
-  left: 98px;
+  top: 102px;
+  left: 64px;
 }
-
 .display-container.display-size-12 .segment-d {
-  top: 196px;
+  top: 176px;
 }
-
 .display-container.display-size-12 .segment-e {
-  top: 111px;
+  top: 102px;
   left: 0px;
 }
-
 .display-container.display-size-12 .segment-f {
-  top: 13px;
+  top: 14px;
   left: 0px;
 }
-
 .display-container.display-size-12 .segment-g {
-  top: 98px;
+  top: 88px;
 }
 
+/* Abaixo são as opacidades dos displays referente ao numero*/
 .display-no-1 .segment-a,
 .display-no-1 .segment-d,
 .display-no-1 .segment-e,
 .display-no-1 .segment-f,
 .display-no-1 .segment-g {
   /*display: none;*/
-  opacity: 0.1;
+  opacity: 0.05;
   filter: alpha(opacity=10);
 }
-
 .display-no-2 .segment-c,
 .display-no-2 .segment-f {
   /*display: none;*/
-  opacity: 0.1;
+  opacity: 0.05;
+}
+.display-no-3 .segment-e,
+.display-no-3 .segment-f {
+  /*display: none;*/
+  opacity: 0.05;
+}
+
+.display-no-4 .segment-a,
+.display-no-4 .segment-d,
+.display-no-4 .segment-e {
+  /*display: none;*/
+  opacity: 0.05;
+}
+
+.display-no-5 .segment-b,
+.display-no-5 .segment-e {
+  /*display: none;*/
+  opacity: 0.05;
+}
+
+.display-no-6 .segment-b {
+  /*display: none;*/
+  opacity: 0.05;
+}
+
+.display-no-7 .segment-d,
+.display-no-7 .segment-e,
+.display-no-7 .segment-f,
+.display-no-7 .segment-g {
+  /*display: none;*/
+  opacity: 0.05;
+}
+
+.display-no-8 {
+}
+
+.display-no-9 .segment-e {
+  /*display: none;*/
+  opacity: 0.05;
 }
 
 .display-no-0 .segment-g {
   /*display: none;*/
-  opacity: 0.1;
+  opacity: 0.05;
+}
+
+.form {
+  margin: 1.5rem;
+}
+
+.input {
+  border-radius: 5px;
+  border-color: #ff3d00;
+  width: 15rem;
+  height: 2rem;
+}
+
+.button {
+  background-color: #ff3d00;
+  border-radius: 5px;
+  color: white;
+  width: 5rem;
+  height: 2.5rem;
+}
+
+/*Responsive -----------------*/
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .main,
+  .title,
+  .tip {
+    margin: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    border: outset;
+    background-color: #f2f2eb;
+    padding: 1rem;
+  }
+
+  .title {
+    color: #ff3d00;
+    margin-bottom: 10rem;
+  }
+
+  .tip {
+    color: #ff3d00;
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    flex-flow: row wrap;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .display-container.display-size-12 {
+    margin-bottom: 24px;
+  }
+
+  .display-container {
+    position: relative;
+    margin-right: 24px;
+    float: left;
+
+    flex: 1;
+    margin: 5px;
+    text-align: center;
+    font-size: 1.5em;
+  }
 }

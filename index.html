@@ -12,7 +12,8 @@
     <section class="card">
       <h1 class="title">Qual é o numero?</h1>
       <h3 class="tip" id="tip"></h3>
-      <div class="container-display">
+      <div class="container">
+
         <div id="display-0" class="display-container display-size-12 display-no-0">
           <div class="segment-x segment-a"><span class="segment-border"></span></div>
           <div class="segment-y segment-b"><span class="segment-border"></span></div>
@@ -41,13 +42,11 @@
           <div class="segment-x segment-g"><span class="segment-border"></span></div>
         </div>
       </div>
-      <div class="container-form">
-        <form class="form" id="form"></form>
-          <button class="restart" id="restart"></button>
-          <input class="input" type="number" placeholder="Digite o palpite" name="check" id="check"/>
-          <button class="check" id="btnCheck">Enviar</button>
-        </form>
-      </div>
+      <form class="form" id="form">
+        <div class="restart" id="restart"></div>
+        <input class="input" type="number" name="check" id="check"/>
+        <button class="button" id="btnCheck">Enviar</button>
+      </form>
     </section>
   </main>
   <script src="js/script.js"></script>

@@ -16,8 +16,6 @@ let numeroSorteado = jogoAdivinha.numeroSorteado();
 
 var currentdisplayNo = 0;
 
-var display = document.getElementById("display");
-
 var display_0 = document.getElementById("display-0");
 var display_1 = document.getElementById("display-1");
 var display_2 = document.getElementById("display-2");
@@ -27,17 +25,20 @@ function setdisplays() {
 
   var baseClass = "display-container display-size-12 display-no-";
 
+  display.className = baseClass + number[0];
+
   display_0.className = baseClass + number[0];
   display_1.className = baseClass + number[0];
   display_2.className = baseClass + number[0];
+
+  document.body.style.backgroundColor = "#" + (s + m + h).toString(16);
 }
 
 function reiniciar() {
-  btnCheck.innerText = "Enviar";
   check.disabled = false;
+  restart.disabled = true;
   check.value = "";
   numeroSorteado = jogoAdivinha.numeroSorteado();
-  btnCheck.removeEventListener("click", reiniciar);
 }
 
 const formAdivinha = document.getElementById("form");
@@ -48,11 +49,12 @@ formAdivinha.addEventListener("submit", function (event) {
   if (numeroSorteado == check.value) {
     tip.innerHTML = '<span style="color:#00C853">Você acertou!!</span>';
     check.disabled = true;
-    btnCheck.innerText = "Nova Partida";
-    btnCheck.addEventListener("click", reiniciar);
+    btnCheck.disabled = true;
+    restart.innerHTML = '<button style="color:#5c5958">Nova Partida</button>';
+    restart.addEventListener("click", reiniciar);
   } else if (numeroSorteado > check.value) {
-    tip.innerText = "É maior";
+    tip.innerHTML = '<span style="color:#ff3d00">É maior</span>';
   } else if (numeroSorteado < check.value) {
-    tip.innerText = "É menor";
+    tip.innerHTML = '<span style="color:#ff3d00">É menor</span>';
   }
 });
