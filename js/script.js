@@ -21,12 +21,13 @@ async function getNumber() {
       console.log("response", response);
       return response.json();
     })
-    .then((drawnNumber) => {
-      if (drawnNumber.StatusCode == 502) {
+    .then((result) => {
+      if (result.StatusCode == 502) {
         error = true;
-        console.log("drawnNumber", drawnNumber);
+        console.log("result", result);
       } else {
-        console.log("Aquiiiii", drawnNumber);
+        let fullNumber = result;
+        console.log("Aquiiiii", fullNumber);
       }
     })
     .catch((error) => console.log("error", error));
@@ -42,6 +43,16 @@ var display_2 = document.getElementById("display-2");
 
 function setdisplays() {
   var number = check.value ? check.value : 0;
+
+  // let numberCharacthers = fullNumber.split("");
+  // numberCharacthers.forEach((number) => {
+  //   const display = `display_${number}`;
+  //   const el = document.getElementById(`display-${number}`);
+  //   console.log("display", display);
+  //   console.log("el", el);
+
+  //   // const el = document.getElementById(`display-${index}`)
+  // });
 
   var baseClass = "display-container display-size-12 display-no-";
 
@@ -68,7 +79,7 @@ formAdivinha.addEventListener("submit", function (event) {
   event.preventDefault();
 
   setdisplays();
-  console.log("error", numeroSorteado);
+  console.log("numeroSorteado", numeroSorteado);
   if (error) {
     tip.innerHTML = '<span style="color:#ff3d00">ERRO</span>';
     check.disabled = true;
