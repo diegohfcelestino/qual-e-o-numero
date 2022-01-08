@@ -10,6 +10,7 @@
   --restart: #929493;
   --wrong: #bf3e21;
   --correct: #65bf3b;
+  --tip: #bf3e21;
 }
 
 /*100% de px = 16px*/
@@ -75,6 +76,17 @@ html {
   background-color: var(--button-disable);
   cursor: not-allowed;
   opacity: 0.5;
+}
+.tip-game {
+  color: var(--tip);
+}
+
+.wrong {
+  color: var(--wrong);
+}
+
+.correct {
+  color: var(--correct);
 }
 
 .btn-restart {

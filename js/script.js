@@ -1,12 +1,3 @@
-// const jogoAdivinha = {
-//   //colocar o numero que vem da API
-//   semente: 1,
-//   tentativa: 1,
-//   numeroSorteado: function geraValorAleatorio() {
-//     return Math.round(Math.random() * this.semente);
-//   },
-// };
-
 //Declarando as variáveis vinculando ao Id do html
 const btnCheck = document.getElementById("btnCheck");
 const tip = document.getElementById("tip");
@@ -49,8 +40,10 @@ window.onload = function () {
 function search() {
   if (check.value < 1) {
     alert("Digitar apenas números positivos de 1 a 300");
+    return false;
   } else if (check.value > 300) {
     alert("Não é possível adicionar números maiores que 300");
+    return false;
   }
 }
 
@@ -64,7 +57,7 @@ function setdisplays() {
   if (returnError) {
     number = returnError;
     console.log("number-com erro", number);
-    tip.innerHTML = '<span style="color:#bf3e21">ERRO</span>';
+    tip.innerHTML = '<span class="wrong">ERRO</span>';
   }
   //Transformando o numero em string e depois em array
   let numberCharacthers = number.toString().split("");
@@ -100,7 +93,7 @@ formAdivinha.addEventListener("submit", function (event) {
   setdisplays();
   //Se o numero que veio na API for igual o numero digitado entra nessa condição
   if (fullNumber == check.value) {
-    tip.innerHTML = '<span style="color:#65bf3b">Você acertou!!</span>';
+    tip.innerHTML = '<span class="correct">Você acertou!!!!</span>';
     check.disabled = true;
     btnCheck.disabled = true;
     btnCheck.className = "button disable";
@@ -110,10 +103,10 @@ formAdivinha.addEventListener("submit", function (event) {
     restart.addEventListener("click", reiniciar);
     //Se o numero que veio na API for maior que o numero digitado entra nessa condição
   } else if (fullNumber > check.value) {
-    tip.innerHTML = '<span style="color:#bf3e21">É maior</span>';
+    tip.innerHTML = '<span class="tip-game">É maior</span>';
     //Se o numero que veio na API for menor que o numero digitado entra nessa condição
   } else if (fullNumber < check.value) {
-    tip.innerHTML = '<span style="color:#bf3e21">É menor</span>';
+    tip.innerHTML = '<span  class="tip-game">É menor</span>';
   }
   //O check.value é chamado para que toda vez que é feito o submit ele apaga o campo
   check.value = "";
