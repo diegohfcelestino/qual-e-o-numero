@@ -1,12 +1,22 @@
-body {
-  margin: 0 auto;
-  background: #fff;
+:root {
+  --border: #efefef;
+  --card: #fdfdfd;
+  --text: #d77332;
+  --display: #272b32;
+  --button-check: #d96a29;
+  --input-disable: #cfcfcf;
+  --button-disable: #a9a9a9;
+  --button-text: #fff;
+  --restart: #929493;
+  --wrong: #bf3e21;
+  --correct: #65bf3b;
 }
 
 /*100% de px = 16px*/
 html {
   font-size: 93.75%; /*15px */
   margin-top: 1rem;
+  background: #fff;
 }
 
 .main,
@@ -16,18 +26,87 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+/* Seção que contem todo o conteúdo (Titulo, dicas, display, input e buttons*/
 .card {
   border-width: 5px;
   border-style: solid;
-  border-color: #ccccc9;
-  background-color: #f2f2eb;
+  border-color: var(--border);
+  background-color: var(--card);
 }
 
 .title {
-  color: #ff3d00;
+  color: var(--text);
   margin: 3rem;
 }
 
+.form {
+  margin: 1.5rem;
+}
+
+.input {
+  border-radius: 5px;
+  border-color: var(--button-check);
+  width: 14rem;
+  height: 2rem;
+}
+
+.input.disable {
+  background-color: var(--input-disable);
+  cursor: not-allowed;
+  opacity: 0.5;
+  border: 3px solid var(--input-disable);
+}
+
+.button {
+  background-color: var(--button-check);
+  border: none;
+  border-radius: 5px;
+  color: var(--button-text);
+  width: 5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+.button:hover {
+  filter: brightness(150%);
+}
+
+.button.disable {
+  background-color: var(--button-disable);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-restart {
+  background-color: var(--restart);
+  border: none;
+  border-radius: 5px;
+  color: var(--button-text);
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.span-nova-partida {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgRestart {
+  height: 20px;
+  width: 20px;
+  margin-right: 4px;
+}
+
+.restart {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+/* Container dos displays */
 .container {
   min-width: 22rem;
   min-height: 16rem;
@@ -36,66 +115,61 @@ html {
   justify-content: center;
 }
 
+/* Container de cada display */
 .display-container {
   position: relative;
   float: left;
   text-align: center;
   font-size: 1.5em;
 }
-
+/* Fixa a posição dos eixos dos displays */
 .display-container div.segment-x,
 .display-container div.segment-y {
   position: absolute;
 }
-
+/* Fixa a posição das bordas dos eixos dos displays */
 .display-container span.segment-border {
   display: block;
   position: absolute;
 }
-
 /* Tamanho da area dos displays */
 .display-container.display-size-12 {
   width: 50px;
   height: 200px;
 }
-
 /* Tamanho e inicio do display deitados (eixo x) */
 .display-container.display-size-12 .segment-x {
   width: 40px;
   left: 12px;
-  border-bottom: 12px solid #000;
+  border-bottom: 12px solid var(--display);
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
 }
-
 /* Espaçamento e bordas do eixo x */
 .display-container.display-size-12 .segment-x .segment-border {
   top: 12px;
   left: -12px;
   right: -12px;
-  border-top: 12px solid #000;
+  border-top: 12px solid var(--display);
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
 }
-
 /* Tamanho do display em pé (eixo y) */
 .display-container.display-size-12 .segment-y {
   height: 60px;
-  border-right: 12px solid #000;
+  border-right: 12px solid var(--display);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
-
 /* Espaçamento e bordas do eixo y */
 .display-container.display-size-12 .segment-y .segment-border {
   left: 12px;
   height: 60px;
   margin-top: -12px;
-  border-left: 12px solid #000;
+  border-left: 12px solid var(--display);
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
 }
-
 /* Abaixo são os posicionamento dos displays */
 .display-container.display-size-12 .segment-a {
   top: 0;
@@ -122,7 +196,6 @@ html {
 .display-container.display-size-12 .segment-g {
   top: 88px;
 }
-
 /* Abaixo são as opacidades dos displays referente ao numero*/
 .display-no-1 .segment-a,
 .display-no-1 .segment-d,
@@ -143,25 +216,21 @@ html {
   /*display: none;*/
   opacity: 0.05;
 }
-
 .display-no-4 .segment-a,
 .display-no-4 .segment-d,
 .display-no-4 .segment-e {
   /*display: none;*/
   opacity: 0.05;
 }
-
 .display-no-5 .segment-b,
 .display-no-5 .segment-e {
   /*display: none;*/
   opacity: 0.05;
 }
-
 .display-no-6 .segment-b {
   /*display: none;*/
   opacity: 0.05;
 }
-
 .display-no-7 .segment-d,
 .display-no-7 .segment-e,
 .display-no-7 .segment-f,
@@ -169,84 +238,19 @@ html {
   /*display: none;*/
   opacity: 0.05;
 }
-
 .display-no-8 {
+  /* Display oito não precisa de opacidade */
 }
-
 .display-no-9 .segment-e {
   /*display: none;*/
   opacity: 0.05;
 }
-
 .display-no-0 .segment-g {
   /*display: none;*/
   opacity: 0.05;
 }
-
 .display-no-none {
   opacity: 0;
-}
-
-.form {
-  margin: 1.5rem;
-}
-
-.input {
-  border-radius: 5px;
-  border-color: #ff3d00;
-  width: 14rem;
-  height: 2rem;
-}
-
-.input.disable {
-  background-color: #888584;
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.button {
-  background-color: #ff3d00;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  width: 5rem;
-  height: 2.5rem;
-  cursor: pointer;
-}
-
-.btn-restart {
-  background-color: #9e9c9c;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  width: 10rem;
-  height: 3rem;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.span-nova-partida {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.imgRestart {
-  height: 20px;
-  width: 20px;
-  margin-right: 4px;
-}
-
-.button.disable {
-  background-color: #888584;
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.restart {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 2rem;
 }
 
 /*Responsive -----------------*/
@@ -255,49 +259,11 @@ html {
     font-size: 87.5%;
   }
 
-  .main,
-  .title,
-  .tip {
-    margin: 5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .card {
-    border: outset;
-    background-color: #f2f2eb;
-    padding: 1rem;
-  }
-
   .title {
-    color: #ff3d00;
     margin-bottom: 10rem;
   }
 
   .tip {
-    color: #ff3d00;
     margin-bottom: 1rem;
-  }
-
-  .container {
-    flex-flow: row wrap;
-    margin: 0 auto;
-    display: flex;
-  }
-
-  .display-container.display-size-12 {
-    margin-bottom: 24px;
-  }
-
-  .display-container {
-    position: relative;
-    margin-right: 24px;
-    float: left;
-
-    flex: 1;
-    margin: 5px;
-    text-align: center;
-    font-size: 1.5em;
   }
 }

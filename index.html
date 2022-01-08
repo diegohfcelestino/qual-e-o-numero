@@ -99,8 +99,13 @@
             class="input"
             type="number"
             name="check"
+            autofocus
             id="check"
             placeholder="Digite o Palpite"
+            min="1"
+            max="300"
+            oninput="validity.valid||(value='')"
+            onkeyup="search()"
           />
           <button class="button" id="btnCheck">Enviar</button>
         </form>
