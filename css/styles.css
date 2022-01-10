@@ -17,7 +17,6 @@ html {
   margin-top: 1rem;
   background: rgb(216, 211, 252);
 }
-
 .main,
 .title,
 .tip {
@@ -96,6 +95,15 @@ hr {
   color: var(--wrong);
 }
 
+.arrow {
+  display: inline-block;
+  font-size: 30px;
+  line-height: 200px;
+  font-weight: bold;
+  transform: rotate(90deg);
+  color: var(--button-text);
+}
+
 .btn-restart {
   background-color: var(--restart);
   border: none;
@@ -111,6 +119,7 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 19px;
 }
 
 .imgRestart {
@@ -220,53 +229,45 @@ hr {
 .display-no-1 .segment-e,
 .display-no-1 .segment-f,
 .display-no-1 .segment-g {
-  /*display: none;*/
   opacity: 0.05;
   filter: alpha(opacity=10);
 }
 .display-no-2 .segment-c,
 .display-no-2 .segment-f {
-  /*display: none;*/
   opacity: 0.05;
 }
 .display-no-3 .segment-e,
 .display-no-3 .segment-f {
-  /*display: none;*/
   opacity: 0.05;
 }
 .display-no-4 .segment-a,
 .display-no-4 .segment-d,
 .display-no-4 .segment-e {
-  /*display: none;*/
   opacity: 0.05;
 }
 .display-no-5 .segment-b,
 .display-no-5 .segment-e {
-  /*display: none;*/
   opacity: 0.05;
 }
 .display-no-6 .segment-b {
-  /*display: none;*/
   opacity: 0.05;
 }
 .display-no-7 .segment-d,
 .display-no-7 .segment-e,
 .display-no-7 .segment-f,
 .display-no-7 .segment-g {
-  /*display: none;*/
   opacity: 0.05;
 }
-.display-no-8 {
-  /* Display oito não precisa de opacidade */
-}
+
+/* Display oito não precisa de opacidade */
+
 .display-no-9 .segment-e {
-  /*display: none;*/
   opacity: 0.05;
 }
 .display-no-0 .segment-g {
-  /*display: none;*/
   opacity: 0.05;
 }
+/* Para desativar o display, foi utilizado o none*/
 .display-no-none {
   display: none;
 }

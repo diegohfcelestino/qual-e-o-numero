@@ -24,6 +24,7 @@ function getNumber() {
         setDisplayError();
       } else {
         fullNumber = result.value;
+        console.log(fullNumber);
       }
     })
     .catch((error) => console.log("error", error));
@@ -92,7 +93,7 @@ function setDisplayError() {
   btnCheck.className = "button disable";
   check.className = "input disable";
   restart.innerHTML =
-    '<button class="btn-restart"><span class="span-nova-partida"><img class="imgRestart" src="/img/undo.svg"/>Nova Partida</spam></button>';
+    '<button class="btn-restart"><span class="span-nova-partida">↻ Nova Partida</span></button>';
   restart.addEventListener("click", reiniciar);
   setdisplays();
   if ((check.value = 502)) {
@@ -127,7 +128,7 @@ formAdivinha.addEventListener("submit", function (event) {
     btnCheck.className = "button disable";
     check.className = "input disable";
     restart.innerHTML =
-      '<button class="btn-restart"><span class="span-nova-partida"><img class="imgRestart" src="/img/undo.svg"/>Nova Partida</spam></button>';
+      '<button class="btn-restart"><span class="span-nova-partida">↻ Nova Partida</span></button>';
     restart.addEventListener("click", reiniciar);
     //Se o numero que veio na API for maior que o numero digitado entra nessa condição
   } else if (fullNumber > check.value) {
