@@ -83,14 +83,15 @@ hr {
   cursor: not-allowed;
   opacity: 0.5;
 }
+/*cor da dica*/
 .tip-game {
   color: var(--tip);
 }
-
+/*cor quando usuário acerta*/
 .correct {
   color: var(--correct);
 }
-
+/*cor do erro */
 .wrong {
   color: var(--wrong);
 }
@@ -111,12 +112,6 @@ hr {
   justify-content: center;
   align-items: center;
   font-size: 18px;
-}
-
-.imgRestart {
-  height: 20px;
-  width: 20px;
-  margin-right: 4px;
 }
 
 .restart {

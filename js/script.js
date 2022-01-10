@@ -1,3 +1,20 @@
+/**
+ Implementação
+
+ Segmentos:
+- Três displays para apresentar os números e que são de 1 a 300.
+- É apresentado erro 502 quando a requisição falha.
+- Foi tratado os números negativos, zero e acima de 300, o zero é excluído quando o usuário tenta digitar, negativo e acima de 300 é mostrado um alerta na tela.
+- O resultado do display ignora os zeros a esquerda.
+ Botão NOVA PARTIDA:
+- O botão fica visível apenas quando tem erro ao receber o número ou quando o jogador acertou o palpite.
+ Campo de entrada
+- é exibido o texto "Digite o palpite" como placeholder
+- O valor aparece nos segmentos assim que o botão ENVIAR for clicado e o input é resetado para o estado inicial.
+- O botão de enviar fica desabilitado quando tem erro ao receber o número ou quando o jogador acertou o palpite. O usuário deve clicar em "NOVA
+PARTIDA" neste caso.
+ */
+
 //Declarando as variáveis vinculando ao Id do html
 const btnCheck = document.getElementById("btnCheck");
 const tip = document.getElementById("tip");
@@ -34,7 +51,7 @@ window.onload = function () {
   getNumber();
 };
 
-//Função para anular o zero a esquerda (quando o usuário digitar)
+//Função para apagar o zero a esquerda (quando o usuário digitar outro numero na sequencia)
 var zero = document.getElementsByClassName("input");
 setInterval(function () {
   for (var i = 0; i < zero.length; i++) {
@@ -52,7 +69,7 @@ setInterval(function () {
 
 //Função para enviar um alert na tela caso o numero for negativo, zero ou acima de 300
 function typing() {
-  if (check.value < 01) {
+  if (check.value < 1) {
     alert("Digitar apenas números positivos de 1 a 300");
     return false;
   } else if (check.value > 300) {
@@ -106,7 +123,7 @@ function reiniciar() {
   btnCheck.disabled = false;
   restart.innerHTML = "&nbsp";
   tip.innerHTML = "&nbsp";
-  check.value = ""; //setando inicial
+  check.value = "";
   btnCheck.className = "button";
   check.className = "input";
   getNumber();
