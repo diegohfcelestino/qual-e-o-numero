@@ -24,7 +24,6 @@ function getNumber() {
         setDisplayError();
       } else {
         fullNumber = result.value;
-        console.log(fullNumber);
       }
     })
     .catch((error) => console.log("error", error));
