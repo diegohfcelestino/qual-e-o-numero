@@ -13,9 +13,7 @@
   --tip: #bf3e21;
 }
 
-/*100% de px = 16px*/
 html {
-  font-size: 93.75%; /*15px */
   margin-top: 1rem;
   background: rgb(216, 211, 252);
 }
@@ -26,6 +24,15 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 25px;
+}
+
+hr {
+  border: 0;
+  border-top: 3px solid var(--display);
+  opacity: 0.1;
+  width: 60%;
+  margin-top: -40px;
 }
 
 /* Seção que contem todo o conteúdo (Titulo, dicas, display, input e buttons*/
@@ -48,7 +55,7 @@ html {
 .input {
   border-radius: 5px;
   border-color: var(--button-check);
-  width: 14rem;
+  width: 12rem;
   height: 2rem;
 }
 
@@ -81,13 +88,12 @@ html {
   color: var(--tip);
 }
 
-.wrong {
-  color: var(--wrong);
-}
-
 .correct {
   color: var(--correct);
-  border-color: var(--correct) !important;
+}
+
+.wrong {
+  color: var(--wrong);
 }
 
 .btn-restart {
@@ -124,10 +130,8 @@ html {
   min-width: 22rem;
   min-height: 16rem;
   display: flex;
-  flex-wrap: wrap;
-  /* grid-template-columns: 95px 95px 95px; */
-  justify-content: center !important;
-  align-items: center !important;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Container de cada display */
@@ -265,19 +269,4 @@ html {
 }
 .display-no-none {
   display: none;
-}
-
-/*Responsive -----------------*/
-@media (min-width: 800px) {
-  html {
-    font-size: 87.5%;
-  }
-
-  .title {
-    margin-bottom: 10rem;
-  }
-
-  .tip {
-    margin-bottom: 1rem;
-  }
 }
