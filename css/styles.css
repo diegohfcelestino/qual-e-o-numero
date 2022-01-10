@@ -17,7 +17,7 @@
 html {
   font-size: 93.75%; /*15px */
   margin-top: 1rem;
-  background: #fff;
+  background: rgb(216, 211, 252);
 }
 
 .main,
@@ -87,6 +87,7 @@ html {
 
 .correct {
   color: var(--correct);
+  border-color: var(--correct) !important;
 }
 
 .btn-restart {
@@ -122,17 +123,18 @@ html {
 .container {
   min-width: 22rem;
   min-height: 16rem;
-  display: grid;
-  grid-template-columns: 95px 95px 95px;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* grid-template-columns: 95px 95px 95px; */
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 /* Container de cada display */
 .display-container {
   position: relative;
-  float: left;
-  text-align: center;
-  font-size: 1.5em;
+  padding: 1rem;
+  margin: 0.5rem;
 }
 /* Fixa a posição dos eixos dos displays */
 .display-container div.segment-x,
@@ -262,7 +264,7 @@ html {
   opacity: 0.05;
 }
 .display-no-none {
-  opacity: 0;
+  display: none;
 }
 
 /*Responsive -----------------*/

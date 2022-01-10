@@ -22,6 +22,17 @@ function getNumber() {
     .then((result) => {
       if (result.StatusCode == 502) {
         returnError = result.StatusCode;
+        check.value = returnError;
+        tip.innerHTML = '<span class="wrong">ERRO</span>';
+        check.disabled = true;
+        btnCheck.disabled = true;
+        btnCheck.className = "button disable";
+        check.className = "input disable";
+        restart.innerHTML =
+          '<button class="btn-restart"><span class="span-nova-partida"><img class="imgRestart" src="/img/undo.svg"/>Nova Partida</spam></button>';
+        restart.addEventListener("click", reiniciar);
+        setdisplays();
+
         console.log("returnError - fetch", returnError);
       } else {
         fullNumber = result.value;
@@ -36,17 +47,6 @@ window.onload = function () {
   getNumber();
 };
 
-//Função para validar se é numero negativo
-function search() {
-  if (check.value < 1) {
-    alert("Digitar apenas números positivos de 1 a 300");
-    return false;
-  } else if (check.value > 300) {
-    alert("Não é possível adicionar números maiores que 300");
-    return false;
-  }
-}
-
 //Função para setar o display
 function setdisplays() {
   var number = check.value ? check.value : 0;
@@ -54,20 +54,22 @@ function setdisplays() {
   var baseClass = "display-container display-size-12 display-no-";
 
   console.log("number", number);
-  if (returnError) {
-    number = returnError;
-    console.log("number-com erro", number);
-    tip.innerHTML = '<span class="wrong">ERRO</span>';
-  }
+
   //Transformando o numero em string e depois em array
   let numberCharacthers = number.toString().split("");
   console.log("numberCharacthers", numberCharacthers);
 
   //Antes de injetar o numero na classe é feita uma verificação se possui numero ou não
   //Dessa forma só irá aparecer o led que contem numero
-  display_0.className = number[0] ? baseClass + number[0] : baseClass + "none";
-  display_1.className = number[1] ? baseClass + number[1] : baseClass + "none";
-  display_2.className = number[2] ? baseClass + number[2] : baseClass + "none";
+  display_0.className = numberCharacthers[0]
+    ? baseClass + numberCharacthers[0]
+    : baseClass + "none";
+  display_1.className = numberCharacthers[1]
+    ? baseClass + numberCharacthers[1]
+    : baseClass + "none";
+  display_2.className = numberCharacthers[2]
+    ? baseClass + numberCharacthers[2]
+    : baseClass + "none";
 }
 
 //Função para reiniciar a aplicação
@@ -76,7 +78,7 @@ function reiniciar() {
   btnCheck.disabled = false;
   restart.innerHTML = "&nbsp";
   tip.innerHTML = "&nbsp";
-  check.value = "";
+  check.value = ""; //setando inicial
   btnCheck.className = "button";
   check.className = "input";
   getNumber();
@@ -90,8 +92,10 @@ formAdivinha.addEventListener("submit", function (event) {
   event.preventDefault();
   console.log("fullNumber", fullNumber);
   console.log("check.value", check.value);
+  console.log("event", event.target.elements.check.value);
   setdisplays();
   //Se o numero que veio na API for igual o numero digitado entra nessa condição
+
   if (fullNumber == check.value) {
     tip.innerHTML = '<span class="correct">Você acertou!!!!</span>';
     check.disabled = true;
